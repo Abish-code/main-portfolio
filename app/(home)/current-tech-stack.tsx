@@ -5,18 +5,13 @@ import type { JSX } from 'react';
 
 import {
   JavaScript,
-  
   MySQL,
   NextJS,
-  
   PHP,
   PostgreSQL,
-  
   ReactJS,
-  
   TailwindCSS,
   TypeScript,
-  
 } from '@/components/shared/icons';
 import {
   Tooltip,
@@ -47,7 +42,7 @@ const stacks: Stack[] = [
     colorClass: 'hover:text-[#777BB4]',
     icon: <PHP />,
   },
- 
+
   {
     title: 'Next.js',
     colorClass: 'hover:text-black dark:hover:text-white',
@@ -58,9 +53,6 @@ const stacks: Stack[] = [
     colorClass: 'hover:text-[#61DAFB]',
     icon: <ReactJS />,
   },
- 
-  
-  
 
   {
     title: 'Tailwind CSS',
@@ -77,8 +69,6 @@ const stacks: Stack[] = [
     colorClass: 'hover:text-[#4169E1]',
     icon: <PostgreSQL />,
   },
-  
-  
 ];
 
 const CurrentTechStack = () => {

@@ -28,8 +28,7 @@ const Hero = () => {
             transition={{ delay: 0.1 }}
           >
             <span>
-              Hi, I'm{' '}
-              <span className={cn('text-primary')}>Abish!!</span>
+              Hi, I'm <span className={cn('text-primary')}>Abish!!</span>
             </span>
             <span>Webdevloper</span>
           </motion.h1>
