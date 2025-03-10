@@ -1,6 +1,6 @@
 import { Email, GitHub, LinkedIn } from '@/components/shared/icons';
 import Link from '@/components/shared/link';
-import { ROUTES, SITE } from '@/constants';
+import { SITE } from '@/constants';
 import { cn } from '@/lib/utils';
 
 import TechStacks from './tech-stacks';
