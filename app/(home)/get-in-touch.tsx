@@ -25,7 +25,7 @@ const GetInTouch = () => {
         together!
       </p>
       <Button asChild className={cn('mt-4')} variant="shadow">
-        <Link href={`mailto:${SITE.author.email}?subject=Hi Bona!`}>
+        <Link href={`mailto:${SITE.author.email}?subject=Hi Abish!`}>
           Get in touch
         </Link>
       </Button>
