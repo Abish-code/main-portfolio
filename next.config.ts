@@ -23,7 +23,7 @@ const nextConfig: NextConfig = {
       { hostname: 'ui-avatars.com' },
     ],
   },
-  webpack: (config) => {
+  webpack: (config, { isServer }) => {
     config.module.rules.push({
       test: /\.(png|jpe?g|gif|mp4)$/i,
       use: [
@@ -40,6 +40,16 @@ const nextConfig: NextConfig = {
       test: /\.svg$/,
       use: ['@svgr/webpack'],
     });
+
+    // Ensure Prisma Client is generated for server-side functions
+    if (isServer) {
+      config.plugins.push(
+        new (require('webpack')).DefinePlugin({
+          'process.env.DATABASE_URL': JSON.stringify(process.env.DATABASE_URL),
+        })
+      );
+    }
+
     return config;
   },
   async headers() {
@@ -52,7 +62,6 @@ const nextConfig: NextConfig = {
 
 const millionConfig = {
   mute: true,
-  // auto: { rsc: true },
   rsc: true,
 };
 
