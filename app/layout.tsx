@@ -6,7 +6,7 @@ import {
   Plus_Jakarta_Sans as PlusJakartaSans,
 } from 'next/font/google';
 import localFont from 'next/font/local';
-import { Analytics } from "@vercel/analytics/react"
+import { Analytics } from "@vercel/analytics/react";
 import GuestbookWidget from '@/components/guestbook-widget';
 import AppProvider from '@/components/providers/app-provider';
 import Footer from '@/components/shared/footer';
