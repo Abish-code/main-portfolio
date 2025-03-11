@@ -1,7 +1,8 @@
 import './global.css';
 
 import { Analytics } from '@vercel/analytics/react';
-import { Fira_Code as FiraCode, Plus_Jakarta_Sans as PlusJakartaSans } from 'next/font/google';
+import { Fira_Code as FiraCode } from 'next/font/google';
+import { Plus_Jakarta_Sans as PlusJakartaSans } from 'next/font/google';
 import localFont from 'next/font/local';
 import type { Metadata, Viewport } from 'next';
 
@@ -61,4 +62,5 @@ const RootLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => (
 );
 
 export default RootLayout;
+
 
