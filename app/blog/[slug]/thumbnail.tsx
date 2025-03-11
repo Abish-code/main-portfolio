@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+
 import { usePostContext } from '@/components/providers/post-provider';
 import { cn } from '@/lib/utils';
 

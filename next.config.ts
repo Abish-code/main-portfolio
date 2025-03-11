@@ -1,12 +1,9 @@
 import MillionLint from '@million/lint';
-import { withSentryConfig } from '@sentry/nextjs';
 import type { NextConfig } from 'next';
 import { withContentlayer } from 'next-contentlayer2';
 
 import appHeaders from './config/next/headers';
 import redirects from './config/next/redirects';
-
-const SentryWebpackPluginOptions = { silent: true };
 
 const isDevelopment = process.env.NODE_ENV === 'development';
 
@@ -21,7 +18,6 @@ const nextConfig: NextConfig = {
       { hostname: 'lh3.googleusercontent.com' },
       // github avatar
       { hostname: 'avatars.githubusercontent.com' },
-      { hostname: 'i.scdn.co' },
       { hostname: 'spotify.com' },
       { hostname: 'res.cloudinary.com' },
       { hostname: 'ui-avatars.com' },
@@ -60,11 +56,4 @@ const millionConfig = {
   rsc: true,
 };
 
-export default MillionLint.next(millionConfig)(
-  isDevelopment
-    ? withContentlayer(nextConfig)
-    : withSentryConfig(
-        withContentlayer(nextConfig),
-        SentryWebpackPluginOptions,
-      ),
-);
+export default MillionLint.next(millionConfig)(withContentlayer(nextConfig));
