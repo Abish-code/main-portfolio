@@ -33,7 +33,7 @@ const Footer = () => {
           <div className={cn('font-medium')}>
             &copy; {new Date().getFullYear()}{' '}
             <Link href="/">{SITE.author.name}</Link> ——{' '}
-            <em className={cn('text-muted-foreground')}>Ithari, Nepla</em>
+            <em className={cn('text-muted-foreground')}>Ithari,Nepal</em>
           </div>
           <div className={cn('flex gap-4')}>
             {FOOTER_ICON_LINKS.map(({ title, url, icon, className }, index) => (
