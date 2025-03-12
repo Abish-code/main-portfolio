@@ -8,7 +8,6 @@ import {
   GitHub,
   Home,
   LinkedIn,
-  Medal,
   Monitor,
   Pencil,
   RSS,
@@ -217,7 +216,6 @@ export const FOOTER_LINKS = [
       title: 'Guestbook',
       path: ROUTES.guestbook,
     },
-  
   ],
 ];
 

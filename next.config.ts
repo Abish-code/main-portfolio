@@ -44,9 +44,9 @@ const nextConfig: NextConfig = {
     // Ensure Prisma Client is generated for server-side functions
     if (isServer) {
       config.plugins.push(
-        new (require('webpack')).DefinePlugin({
+        new (require('webpack').DefinePlugin)({
           'process.env.DATABASE_URL': JSON.stringify(process.env.DATABASE_URL),
-        })
+        }),
       );
     }
 

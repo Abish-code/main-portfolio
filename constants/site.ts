@@ -27,7 +27,7 @@ export const BASE_URL =
 
 export const SITE: Site = {
   url: BASE_URL,
-  name: "Abish portfolio",
+  name: 'Abish portfolio',
   title: 'Abish karki',
   description:
     'Passionate Web devloper who focused on solving problems with digital products.',
