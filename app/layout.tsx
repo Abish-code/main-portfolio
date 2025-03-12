@@ -46,6 +46,13 @@ const fontMono = FiraCode({
 
 const RootLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => (
   <html lang="en" suppressHydrationWarning>
+    <head>
+      {/* Add Google Site Verification Meta Tag */}
+      <meta
+        name="google-site-verification"
+        content="Wm0A2afSK-d5bQs_BCXNqDsaWxrVVIf1OzDaXKyTRPA" // Your verification code
+      />
+    </head>
     <body
       className={cn(fontSans.variable, fontMono.variable, fontCal.variable)}
     >
@@ -65,3 +72,4 @@ const RootLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => (
 );
 
 export default RootLayout;
+
