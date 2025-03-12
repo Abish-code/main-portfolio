@@ -3,9 +3,8 @@ generator client {
 }
 
 datasource db {
-  provider  = "mysql"
-  url       = env("DATABASE_URL")
-  directUrl = env("DIRECT_URL")
+  provider = "mysql"  // Updated to use MySQL instead of PostgreSQL
+  url      = env("DATABASE_URL")  // This references the DATABASE_URL in .env file
 }
 
 model Account {
@@ -135,4 +134,3 @@ enum ReactionType {
   LOVED
   THINKING
 }
-
