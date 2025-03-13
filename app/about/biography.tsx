@@ -10,7 +10,7 @@ const Biography = () => {
     <>
       <p>Hi there! Thanks for visiting my digital home on the internet.</p>
       <p>
-        I’m Abish Karki, a 16-year-old tech enthusiast from Nepal. I’m
+        I’m Abish Karki, a 16-year-old tech enthusiast from Nepal,ithari. I’m
         passionate about web development, but I also love exploring new
         technologies in various fields, from machine learning to game
         development. I believe in the power of technology to shape the future,
@@ -54,7 +54,7 @@ const Biography = () => {
         I’m always open to new ideas, collaborations, or even just a chat about
         tech! Feel free to reach out to me via email at{' '}
         <Link
-          href={`mailto:${SITE.author.email}?subject=Hi Abish!`}
+          href={`mailto:${SITE.author.email}?subject=k xa Abish!`}
           className={cn('underline')}
         >
           {SITE.author.email}
