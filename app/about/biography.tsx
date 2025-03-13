@@ -10,11 +10,9 @@ const Biography = () => {
     <>
       <p>Hi there! Thanks for visiting my digital home on the internet.</p>
       <p>
-        I’m Abish Karki, a 16-year-old tech enthusiast from Nepal,ithari. I’m
-        passionate about web development, but I also love exploring new
-        technologies in various fields, from machine learning to game
-        development. I believe in the power of technology to shape the future,
-        and I’m always eager to dive into something new.
+      I’m Abish Karki, a 16-year-old passionate web developer from Itahari, Nepal. While my primary focus is web development, I am currently learning machine learning to expand my skill set. I believe in the power of technology to shape the future, and I’m always eager to dive into new areas of learning.
+
+
       </p>
       <p>
         I’m currently in grade 11 at{' '}
