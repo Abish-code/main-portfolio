@@ -122,7 +122,7 @@ const Hero = () => {
                 )}
               >
                 <Link
-                  href="https://github.com/yourusername"
+                  href="https://github.com/Abish-code"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
