@@ -31,10 +31,10 @@ export const BASE_URL =
 // Configuration for your site (SEO, metadata, etc.)
 export const SITE: Site = {
   url: BASE_URL,
-  name: 'Abish Portfolio',
-  title: 'Abish Karki',
+  name: 'Abish karki', // Updated from 'Abish Portfolio' to include 'Abishkarki'
+  title: 'Abishkarki | Abish Karki', // Updated from 'Abish Karki' to include 'Abishkarki' branding
   description:
-    'Passionate Web Developer who focuses on solving problems with digital products.',
+    'Passionate Web Developer who focuses on solving problems with digital products under the Abishkarki brand.',
   author: {
     name: 'Abish Karki',
     url: 'https://abishkarki.vercel.app', // Author URL (Portfolio URL)
@@ -48,7 +48,7 @@ export const SITE: Site = {
     twitter: '@bonabrian_',
   },
   keywords: [
-    'Abish',
+    'Abishkarki',
     'Abish Karki',
     'developer',
     'portfolio',

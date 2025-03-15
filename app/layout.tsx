@@ -47,10 +47,31 @@ const fontMono = FiraCode({
 const RootLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => (
   <html lang="en" suppressHydrationWarning>
     <head>
-      {/* Add Google Site Verification Meta Tag */}
+      {/* Standard Favicon */}
+      <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+      {/* Additional Favicons for Different Sizes */}
+      <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+      <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+      {/* Apple Touch Icon (for iOS devices) */}
+      <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+      {/* Android Chrome Icons */}
+      <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png" />
+      <link rel="icon" type="image/png" sizes="384x384" href="/android-chrome-384x384.png" />
+      <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png" />
+      {/* Microsoft Tiles */}
+      <link rel="icon" type="image/png" sizes="70x70" href="/mstile-70x70.png" />
+      <link rel="icon" type="image/png" sizes="144x144" href="/mstile-144x144.png" />
+      <link rel="icon" type="image/png" sizes="150x150" href="/mstile-150x150.png" />
+      <link rel="icon" type="image/png" sizes="310x150" href="/mstile-310x150.png" />
+      <link rel="icon" type="image/png" sizes="310x310" href="/mstile-310x310.png" />
+      {/* Safari Pinned Tab */}
+      <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+      {/* Web Manifest */}
+      <link rel="manifest" href="/site.webmanifest" />
+      {/* Google Site Verification */}
       <meta
         name="google-site-verification"
-        content="Wm0A2afSK-d5bQs_BCXNqDsaWxrVVIf1OzDaXKyTRPA" // Your verification code
+        content="Wm0A2afSK-d5bQs_BCXNqDsaWxrVVIf1OzDaXKyTRPA"
       />
     </head>
     <body
