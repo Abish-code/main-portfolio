@@ -3,8 +3,8 @@ generator client {
 }
 
 datasource db {
-  provider = "mysql"  // Updated to use MySQL instead of PostgreSQL
-  url      = env("DATABASE_URL")  // This references the DATABASE_URL in .env file
+  provider = "postgresql"  // Updated to PostgreSQL
+  url      = env("DATABASE_URL")  // Uses the DATABASE_URL from .env
 }
 
 model Account {
