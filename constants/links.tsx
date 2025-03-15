@@ -1,7 +1,6 @@
 import {
   AtSign,
   BookOpenText,
-  Camera,
   Coffee,
   Dashboard,
   Email,
@@ -9,7 +8,6 @@ import {
   GitHub,
   Home,
   LinkedIn,
-  Monitor,
   Pencil,
   RSS,
   Twitter,
@@ -72,7 +70,7 @@ export const NAV_LINKS: NavLink[] = [
   {
     path: ROUTES.photos,
     label: 'Photos',
-    icon: <Camera />,
+    icon: <Pencil />,
     onlyShowOnDropdownMenu: true,
   },
 ];
@@ -143,7 +141,7 @@ export const COMMAND_PAGES: CommandMenu[] = [
   {
     label: 'Uses',
     href: ROUTES.uses,
-    icon: <Monitor />,
+    icon: <Pencil />,
     isExternal: false,
     eventName: 'Pages: Uses',
     type: 'PAGE',
@@ -152,7 +150,7 @@ export const COMMAND_PAGES: CommandMenu[] = [
   {
     label: 'Photos',
     href: ROUTES.photos,
-    icon: <Camera />,
+    icon: <Pencil />,
     isExternal: false,
     eventName: 'Pages: Photos',
     type: 'PAGE',

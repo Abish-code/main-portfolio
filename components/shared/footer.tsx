@@ -1,9 +1,10 @@
-"use client";
+'use client';
 
 import { FOOTER_ICON_LINKS, FOOTER_LINKS, SITE } from '@/constants';
 import { cn } from '@/lib/utils';
-import Link from './link';
+
 import Container from './container';
+import Link from './link';
 
 const Footer = () => {
   console.log('FOOTER_LINKS:', FOOTER_LINKS); // Debug log
