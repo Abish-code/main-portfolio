@@ -1,14 +1,16 @@
+"use client";
+
 import { FOOTER_ICON_LINKS, FOOTER_LINKS, SITE } from '@/constants';
 import { cn } from '@/lib/utils';
-
-import Container from './container';
 import Link from './link';
+import Container from './container';
 
 const Footer = () => {
+  console.log('FOOTER_LINKS:', FOOTER_LINKS); // Debug log
   return (
     <footer className={cn('bg-grid mt-24 mb-10 pt-16 text-sm')}>
       <Container>
-        <nav className={cn('mb-8 grid grid-cols-2 gap-y-2', 'sm:grid-cols-3')}>
+        <nav className={cn('mb-8 grid grid-cols-1 gap-y-2 sm:grid-cols-3')}>
           {FOOTER_LINKS.map((groups, index) => (
             <div
               key={`footerGroup${index}`}
@@ -31,7 +33,7 @@ const Footer = () => {
         </nav>
         <div className={cn('flex items-center justify-between gap-4')}>
           <div className={cn('font-medium')}>
-            &copy; {new Date().getFullYear()}{' '}
+            © {new Date().getFullYear()}{' '}
             <Link href="/">{SITE.author.name}</Link> ——{' '}
             <em className={cn('text-muted-foreground')}>Ithari,Nepal</em>
           </div>

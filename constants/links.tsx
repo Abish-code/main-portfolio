@@ -1,6 +1,7 @@
 import {
   AtSign,
   BookOpenText,
+  Camera,
   Coffee,
   Dashboard,
   Email,
@@ -27,6 +28,7 @@ export const ROUTES = {
   dashboard: '/dashboard',
   resume: '/resume',
   uses: '/uses',
+  photos: '/photos',
 };
 
 export const NAV_LINKS: NavLink[] = [
@@ -66,6 +68,12 @@ export const NAV_LINKS: NavLink[] = [
     path: ROUTES.about,
     label: 'About',
     icon: <AtSign />,
+  },
+  {
+    path: ROUTES.photos,
+    label: 'Photos',
+    icon: <Camera />,
+    onlyShowOnDropdownMenu: true,
   },
 ];
 
@@ -141,7 +149,17 @@ export const COMMAND_PAGES: CommandMenu[] = [
     type: 'PAGE',
     closeOnSelect: true,
   },
+  {
+    label: 'Photos',
+    href: ROUTES.photos,
+    icon: <Camera />,
+    isExternal: false,
+    eventName: 'Pages: Photos',
+    type: 'PAGE',
+    closeOnSelect: true,
+  },
 ];
+
 export const COMMAND_SOCIAL_MEDIA: CommandMenu[] = [
   {
     label: 'Email',
@@ -176,6 +194,7 @@ export const COMMAND_SOCIAL_MEDIA: CommandMenu[] = [
     type: 'LINK',
   },
 ];
+
 export const COMMAND_APPEARANCE = [];
 
 export const FOOTER_LINKS = [
@@ -215,6 +234,10 @@ export const FOOTER_LINKS = [
     {
       title: 'Guestbook',
       path: ROUTES.guestbook,
+    },
+    {
+      title: 'Photos',
+      path: ROUTES.photos,
     },
   ],
 ];

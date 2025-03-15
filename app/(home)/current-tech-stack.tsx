@@ -7,7 +7,6 @@ import {
   JavaScript,
   MySQL,
   NextJS,
-  PHP,
   PostgreSQL,
   ReactJS,
   TailwindCSS,
@@ -36,11 +35,6 @@ const stacks: Stack[] = [
     title: 'JavaScript',
     colorClass: 'hover:text-[#F7DF1E]',
     icon: <JavaScript />,
-  },
-  {
-    title: 'PHP',
-    colorClass: 'hover:text-[#777BB4]',
-    icon: <PHP />,
   },
 
   {
