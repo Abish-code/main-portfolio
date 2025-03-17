@@ -52,7 +52,7 @@ const Biography = () => {
         </motion.p>
 
         <motion.p variants={item} className="mt-4">
-          I'm currently in grade 11 at{' '}
+          I'm currently study in grade 11 at{' '}
           <Link
             href="https://www.godawari.edu.np/"
             className="group relative inline-flex cursor-pointer items-center text-blue-400"
