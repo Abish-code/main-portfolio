@@ -22,17 +22,21 @@ const ProjectCard = ({ project }: { project: Project }) => {
     stacks,
   } = project;
 
+  // ✅ Ensure Correct Image Path
+  const imageUrl = image ? image : 'webpage.png';
+
+  // ✅ Ensure Blur Placeholder Works
   const extraImageProps = useMemo(() => {
     if (image && imageMeta?.blur64) {
-      return { placeholder: 'blur', blurDataURL: imageMeta?.blur64 } as {
+      return { placeholder: 'blur', blurDataURL: imageMeta.blur64 } as {
         placeholder: 'blur' | 'empty';
         blurDataURL?: string;
       };
     }
-
     return {};
   }, [image, imageMeta]);
 
+  // ✅ Fix URL Handling
   let projectUrl = url ?? `${ROUTES.projects}/${slug}`;
   if (playStoreUrl) projectUrl = playStoreUrl;
 
@@ -50,16 +54,29 @@ const ProjectCard = ({ project }: { project: Project }) => {
         )}
       >
         <div className={cn('absolute h-full w-full')} />
-        <Image
-          src={image ?? ''}
+
+        {/* ✅ Debug: Use <img> to check if Next.js is the issue */}
+        <img
+          src={imageUrl}
           alt={title}
-          fill
-          className={cn('rounded-t-xl object-cover')}
+          width={800}
+          height={450}
+          className="rounded-t-xl object-cover"
+        />
+
+        {/* ✅ Next.js Image Component */}
+        <Image
+          src={imageUrl}
+          alt={title}
+          width={800}
+          height={450}
+          className="rounded-t-xl object-cover"
           sizes="(max-width: 768px) 100vw, 50vw"
           priority
           {...extraImageProps}
         />
       </div>
+
       <div
         className={cn(
           'flex flex-col p-4 transition-transform duration-200 ease-out',
@@ -76,15 +93,19 @@ const ProjectCard = ({ project }: { project: Project }) => {
         </h2>
         <p className={cn('text-muted-foreground mt-2')}>{description}</p>
       </div>
+
       <RenderIf isTrue={Boolean(stacks?.length)}>
         <div className={cn('mt-2 flex flex-wrap items-end gap-2 px-4 pb-4')}>
           {stacks?.map((stack, idx) => {
+            const stackIcon = STACKS[stack] ?? null;
+            if (!stackIcon) return null;
+
             return (
               <Tooltip key={`${stack}-${idx}`}>
                 <TooltipTrigger asChild>
                   <span>
-                    {cloneElement(STACKS[stack], {
-                      className: `${STACKS[stack].props.className ?? ''} size-5`,
+                    {cloneElement(stackIcon, {
+                      className: `${stackIcon.props.className ?? ''} size-5`,
                     })}
                   </span>
                 </TooltipTrigger>

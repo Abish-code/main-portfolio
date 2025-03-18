@@ -45,7 +45,7 @@ export const SITE: Site = {
       url: 'https://github.com/Abish-code',
     },
     avatar: '/media/bonabrian/bonabrian.jpg', // Path to your avatar image
-    twitter: '@bonabrian_',
+    twitter: '',
   },
   keywords: [
     'Abishkarki',
