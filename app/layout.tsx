@@ -7,7 +7,6 @@ import {
   Plus_Jakarta_Sans as PlusJakartaSans,
 } from 'next/font/google';
 import localFont from 'next/font/local';
-import Script from 'next/script';
 
 import GuestbookWidget from '@/components/guestbook-widget';
 import AppProvider from '@/components/providers/app-provider';
@@ -21,7 +20,7 @@ import { cn } from '@/lib/utils';
 export const metadata: Metadata = seo({
   ...DEFAULT_METADATA,
   title: {
-    default: 'Abish Karki',
+    default: 'Abish Karki', // Explicitly set to ensure no "Vercel" override
     template: '%s | Abish Karki',
   },
   description: 'Portfolio of Abish Karki - Developer, Designer, and Creator.',
@@ -62,7 +61,7 @@ const RootLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => (
     <head>
       {/* Standard Favicon */}
       <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-      {/* Additional Favicons */}
+      {/* Additional Favicons for Different Sizes */}
       <link
         rel="icon"
         type="image/png"
@@ -75,11 +74,13 @@ const RootLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => (
         sizes="32x32"
         href="/favicon-32x32.png"
       />
+      {/* Apple Touch Icon (for iOS devices) */}
       <link
         rel="apple-touch-icon"
         sizes="180x180"
         href="/apple-touch-icon.png"
       />
+      {/* Android Chrome Icons */}
       <link
         rel="icon"
         type="image/png"
@@ -98,6 +99,7 @@ const RootLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => (
         sizes="512x512"
         href="/android-chrome-512x512.png"
       />
+      {/* Microsoft Tiles */}
       <link
         rel="icon"
         type="image/png"
@@ -128,14 +130,21 @@ const RootLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => (
         sizes="310x310"
         href="/mstile-310x310.png"
       />
+      {/* Safari Pinned Tab */}
       <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+      {/* Web Manifest */}
       <link rel="manifest" href="/site.webmanifest" />
-
       {/* Google Site Verification */}
       <meta
         name="google-site-verification"
         content="Wm0A2afSK-d5bQs_BCXNqDsaWxrVVIf1OzDaXKyTRPA"
       />
+      {/* Umami Analytics */}
+      <script
+        defer
+        src="https://cloud.umami.is/script.js"
+        data-website-id="740e653f-0133-4574-9154-cd1f2c4aaf5b"
+      ></script>
     </head>
     <body
       className={cn(fontSans.variable, fontMono.variable, fontCal.variable)}
@@ -151,23 +160,6 @@ const RootLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => (
         <Analytics />
         <Toaster />
       </AppProvider>
-
-      {/* Google Analytics */}
-      <Script
-        strategy="afterInteractive"
-        src="https://www.googletagmanager.com/gtag/js?id=G-ECYRHW74C8"
-      />
-      <Script id="google-analytics" strategy="afterInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', 'G-ECYRHW74C8', {
-            page_path: window.location.pathname,
-          });
-        `}
-      </Script>
     </body>
   </html>
 );
