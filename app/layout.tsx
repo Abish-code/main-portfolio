@@ -60,21 +60,6 @@ const fontMono = FiraCode({
 const RootLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => (
   <html lang="en" suppressHydrationWarning>
     <head>
-      {/* Google Analytics */}
-      <Script
-        async
-        src="https://www.googletagmanager.com/gtag/js?id=G-ECYRHW74C8"
-      />
-      <Script id="google-analytics">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', 'G-ECYRHW74C8');
-        `}
-      </Script>
-
       {/* Standard Favicon */}
       <link rel="icon" type="image/x-icon" href="/favicon.ico" />
       {/* Additional Favicons */}
@@ -166,6 +151,23 @@ const RootLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => (
         <Analytics />
         <Toaster />
       </AppProvider>
+
+      {/* Google Analytics */}
+      <Script
+        strategy="afterInteractive"
+        src="https://www.googletagmanager.com/gtag/js?id=G-ECYRHW74C8"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-ECYRHW74C8', {
+            page_path: window.location.pathname,
+          });
+        `}
+      </Script>
     </body>
   </html>
 );
