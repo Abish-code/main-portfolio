@@ -7,6 +7,7 @@ import {
   Plus_Jakarta_Sans as PlusJakartaSans,
 } from 'next/font/google';
 import localFont from 'next/font/local';
+import Script from 'next/script';
 
 import GuestbookWidget from '@/components/guestbook-widget';
 import AppProvider from '@/components/providers/app-provider';
@@ -20,7 +21,7 @@ import { cn } from '@/lib/utils';
 export const metadata: Metadata = seo({
   ...DEFAULT_METADATA,
   title: {
-    default: 'Abish Karki', // Explicitly set to ensure no "Vercel" override
+    default: 'Abish Karki',
     template: '%s | Abish Karki',
   },
   description: 'Portfolio of Abish Karki - Developer, Designer, and Creator.',
@@ -59,9 +60,24 @@ const fontMono = FiraCode({
 const RootLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => (
   <html lang="en" suppressHydrationWarning>
     <head>
+      {/* Google Analytics */}
+      <Script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-ECYRHW74C8"
+      />
+      <Script id="google-analytics">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-ECYRHW74C8');
+        `}
+      </Script>
+
       {/* Standard Favicon */}
       <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-      {/* Additional Favicons for Different Sizes */}
+      {/* Additional Favicons */}
       <link
         rel="icon"
         type="image/png"
@@ -74,13 +90,11 @@ const RootLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => (
         sizes="32x32"
         href="/favicon-32x32.png"
       />
-      {/* Apple Touch Icon (for iOS devices) */}
       <link
         rel="apple-touch-icon"
         sizes="180x180"
         href="/apple-touch-icon.png"
       />
-      {/* Android Chrome Icons */}
       <link
         rel="icon"
         type="image/png"
@@ -99,7 +113,6 @@ const RootLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => (
         sizes="512x512"
         href="/android-chrome-512x512.png"
       />
-      {/* Microsoft Tiles */}
       <link
         rel="icon"
         type="image/png"
@@ -130,10 +143,9 @@ const RootLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => (
         sizes="310x310"
         href="/mstile-310x310.png"
       />
-      {/* Safari Pinned Tab */}
       <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
-      {/* Web Manifest */}
       <link rel="manifest" href="/site.webmanifest" />
+
       {/* Google Site Verification */}
       <meta
         name="google-site-verification"
